@@ -58,7 +58,7 @@ $errors = [];
         ===================================================== */
         if ($aksi == 'hapus' && $id) {
             mysqli_query($conn, "DELETE FROM produk WHERE id_produk='$id'");
-            header("Location: super.php");
+            header("Location: index.php");
             exit;
         }
 
@@ -95,7 +95,7 @@ $errors = [];
                     VALUES('$nama', '$harga', '$kategori_id', '$status_id')
                 ");
                 }
-                header("Location: super.php");
+                header("Location: index.php");
                 exit;
             }
         }
@@ -122,7 +122,7 @@ $errors = [];
                         <i class="bi bi-box-seam me-2"></i>
                         <?= $aksi == 'edit' ? 'Edit Produk' : 'Tambah Produk Baru' ?>
                     </h5>
-                    <a href="super.php" class="btn btn-light btn-sm">
+                    <a href="index.php" class="btn btn-light btn-sm">
                         <i class="bi bi-arrow-left me-1"></i> Kembali
                     </a>
                 </div>
@@ -207,7 +207,7 @@ $errors = [];
                             <button type="submit" name="submit" class="btn btn-primary">
                                 <i class="bi bi-check-circle me-1"></i> Simpan
                             </button>
-                            <a href="super.php" class="btn btn-secondary">
+                            <a href="index.php" class="btn btn-secondary">
                                 <i class="bi bi-x-circle me-1"></i> Batal
                             </a>
                         </div>
@@ -236,7 +236,7 @@ $errors = [];
                         <i class="bi bi-cart-check me-2"></i> Produk Bisa Dijual
                     </h5>
                     <div>
-                        <a href="super.php" class="btn btn-light btn-sm">
+                        <a href="index.php" class="btn btn-light btn-sm">
                             <i class="bi bi-arrow-left me-1"></i> Kembali ke Daftar
                         </a>
                     </div>
@@ -289,10 +289,10 @@ $errors = [];
                         <i class="bi bi-boxes me-2"></i> Daftar Produk
                     </h5>
                     <div>
-                        <a href="super.php?aksi=bisa_dijual" class="btn btn-success btn-sm me-2">
+                        <a href="index.php?aksi=bisa_dijual" class="btn btn-success btn-sm me-2">
                             <i class="bi bi-cart-check me-1"></i> Produk Bisa Dijual
                         </a>
-                        <a href="super.php?aksi=tambah" class="btn btn-primary btn-sm">
+                        <a href="index.php?aksi=tambah" class="btn btn-primary btn-sm">
                             <i class="bi bi-plus-circle me-1"></i> Tambah Produk
                         </a>
                     </div>
@@ -336,11 +336,11 @@ $errors = [];
                                         </td>
                                         <td class="text-center">
                                             <div class="action-buttons justify-content-center">
-                                                <a href="super.php?aksi=edit&id=<?= $p['id_produk'] ?>" 
+                                                <a href="index.php?aksi=edit&id=<?= $p['id_produk'] ?>" 
                                                    class="btn btn-warning btn-sm btn-action">
                                                     <i class="bi bi-pencil-square"></i> Edit
                                                 </a>
-                                                <a href="super.php?aksi=hapus&id=<?= $p['id_produk'] ?>" 
+                                                <a href="index.php?aksi=hapus&id=<?= $p['id_produk'] ?>" 
                                                    class="btn btn-danger btn-sm btn-action"
                                                    onclick="return confirm('Yakin ingin menghapus produk <?= htmlspecialchars(addslashes($p['nama_produk'])) ?>?')">
                                                     <i class="bi bi-trash"></i> Hapus
@@ -357,7 +357,7 @@ $errors = [];
                                 <i class="bi bi-inbox fs-1 text-muted"></i>
                                 <h5 class="mt-3 text-muted">Belum ada data produk</h5>
                                 <p class="text-muted">Silakan tambah produk baru dengan menekan tombol "Tambah Produk"</p>
-                                <a href="super.php?aksi=tambah" class="btn btn-primary mt-2">
+                                <a href="index.php?aksi=tambah" class="btn btn-primary mt-2">
                                     <i class="bi bi-plus-circle me-1"></i> Tambah Produk
                                 </a>
                             </div>
