@@ -37,6 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # // Di bagian ini, saya menambahkan aplikasi 'produk'
+    # // ke dalam INSTALLED_APPS.
+    # //
+    # // Dengan menambahkan app ini ke settings.py:
+    # // 1. Django mengenali bahwa app 'produk' adalah bagian dari project
+    # // 2. Model-model di dalamnya (Produk, Kategori, Status) akan 
+    # //    diikutsertakan dalam proses migrasi database
+    # // 3. Template, views, dan forms dari app ini terdaftar dengan benar
+    # //
+    # // Tanpa menambahkan app di sini, Django tidak bisa membuat tabel
+    # // dan fitur CRUD produk tidak dapat berjalan.
+    # ============================================================
     'produk',
 ]
 
